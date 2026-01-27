@@ -1,3 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+@import "primeicons/primeicons.css";
+
+
+/* layout */
+.main-layout {
+  @apply flex;
+}
+
+.main-container {
+  @apply flex-1 p-4;
+}
+
+
+/* sidebar-menu */
+.p-panelmenu-panel {
+  @apply !rounded-none;
+}
+
+.p-password:has(.p-password-toggle-mask-icon) .p-password-input,
+.p-password-input,
+.p-inputtext,
+.p-password {
+  @apply w-full;
+}
