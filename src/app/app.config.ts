@@ -8,22 +8,23 @@ import { providePrimeNG } from 'primeng/config';
 
 import Aura from '@primeuix/themes/aura';
 import { provideStore } from '@ngrx/store';
+import { CounterReducer } from './components/counter/ngrx-counter/states/counter.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes), provideClientHydration(withEventReplay()),
     providePrimeNG({
-        ripple: true,
-        theme: {
-            preset: Aura,
-            options: {
-                prefix: 'p',
-                darkModeSelector: 'system',
-                cssLayer: false
-            }
+      ripple: true,
+      theme: {
+        preset: Aura,
+        options: {
+          prefix: 'p',
+          darkModeSelector: 'system',
+          cssLayer: false
         }
+      }
     }),
-    provideStore()
-]
+    provideStore({ counter: CounterReducer })
+  ]
 };
