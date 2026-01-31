@@ -1,5 +1,6 @@
-import { Component, EventEmitter, input, output } from '@angular/core';
+import { Component, EventEmitter, inject, input, output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { CounterService } from '../../../../core/services/counter-service';
 
 @Component({
   selector: 'app-counter-buttons',
@@ -8,22 +9,20 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './counter-buttons.css',
 })
 export class CounterButtons {
-  outDecrease = output();
-  outIncrease = output();
-  outReset = output();
+  counterService = inject(CounterService);
 
-  value = input();
+  value = this.counterService.$count;
 
   onDecrease() {
-    this.outDecrease.emit()
+    this.counterService.decrease()
   }
 
   onIncrease() {
-    this.outIncrease.emit()
+    this.counterService.increase()
   }
 
   onReset() {
-    this.outReset.emit()
+    this.counterService.reset()
   }
 
 }

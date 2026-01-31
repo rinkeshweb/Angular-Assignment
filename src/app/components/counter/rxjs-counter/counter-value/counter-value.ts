@@ -1,4 +1,5 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
+import { CounterService } from '../../../../core/services/counter-service';
 
 @Component({
   selector: 'app-counter-value',
@@ -7,5 +8,8 @@ import { Component, input, output, signal } from '@angular/core';
   styleUrl: './counter-value.css',
 })
 export class CounterValue {
-  value = input<number>(0);
+  counterService = inject(CounterService);
+
+  value = this.counterService.$count;
+
 }

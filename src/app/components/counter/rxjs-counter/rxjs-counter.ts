@@ -9,17 +9,4 @@ import { CounterButtons } from "./counter-buttons/counter-buttons";
   styleUrl: './rxjs-counter.css',
 })
 export class RxjsCounter {
-  counter = signal<number>(0);
-
-  onDecrease() {
-    this.counter.update(v => v - 1)
-  }
-
-  onIncrease() {
-    this.counter.update(v => v + 1)
-  }
-
-  onReset() {
-    this.counter.set(0)
-  }
 }
