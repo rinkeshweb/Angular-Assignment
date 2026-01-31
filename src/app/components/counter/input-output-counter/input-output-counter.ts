@@ -1,15 +1,14 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CounterValue } from "./counter-value/counter-value";
 import { CounterButtons } from "./counter-buttons/counter-buttons";
 
 @Component({
-  selector: 'app-ngrx-counter',
+  selector: 'app-input-output-counter',
   imports: [CounterValue, CounterButtons],
-  templateUrl: './ngrx-counter.html',
-  styleUrl: './ngrx-counter.css',
+  templateUrl: './input-output-counter.html',
+  styleUrl: './input-output-counter.css',
 })
-export class NgrxCounter {
-
+export class InputOutputCounter {
   counter = signal<number>(0);
 
   onDecrease() {
@@ -23,5 +22,4 @@ export class NgrxCounter {
   onReset() {
     this.counter.set(0)
   }
-
 }
