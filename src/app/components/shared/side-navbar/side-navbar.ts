@@ -35,6 +35,10 @@ export class SideNavbar implements OnInit {
         label: 'Credit Card',
         routerLink: '/credit-card',
       },
+      {
+        label: 'NGRX Counter',
+        routerLink: '/counter',
+      },
     ];
   }
 }
